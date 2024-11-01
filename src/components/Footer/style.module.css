@@ -1,0 +1,5 @@
+.tasks_count {
+  display: flex;
+  align-items: center;
+  gap: 36px;
+}

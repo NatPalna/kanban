@@ -1,0 +1,27 @@
+.title {
+  margin: 0;
+  font-size: 28px;
+  font-weight: 400;
+}
+
+.user_info {
+  display: flex;
+  align-items: center;
+}
+
+.avatar {
+  width: 40px;
+  height: 40px;
+  margin-right: 10px;
+  border-radius: 50%;
+  border: 2px solid var(--bg-color-task);
+  background-color: var(--bg-color-task);
+  box-sizing: border-box;
+}
+
+.button {
+  border: 0;
+  background-color: transparent;
+  cursor: pointer;
+  padding: 0;
+}
