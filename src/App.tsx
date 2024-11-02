@@ -42,9 +42,11 @@ function App() {
     <>
       <Header />
       <main>
-        {columns.map((item) => (
-          <Column title={item.title} />
-        ))}
+        <div className="container">
+          {columns.map((item) => (
+            <Column title={item.title} />
+          ))}
+        </div>
       </main>
       <Footer />
     </>
