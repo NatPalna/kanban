@@ -1,27 +1,50 @@
-import { useEffect, useState } from "react";
+import { useMemo, useState } from "react";
 import "./assets/styles/main.css";
-import { Card } from "./components/Card";
+import Column from "./components/Columns";
 import { Footer } from "./components/Footer";
 import { Header } from "./components/Header";
-import { Task } from "./types";
+
+type Task = {
+  id: number;
+  title: string;
+  description: string;
+};
 
 function App() {
-  const storage = localStorage.getItem("tasks");
+  const [backlog, setBacklog] = useState([]);
 
-  const [task, setTask] = useState<Task[]>(storage ? JSON.parse(storage) : []);
-
-  useEffect(() => {
-    localStorage.setItem("tasks", JSON.stringify(task));
-  }, [task]);
+  const columns = useMemo(() => {
+    return [
+      {
+        title: "Backlog",
+        tasks: backlog,
+        select: null,
+      },
+      {
+        title: "Ready",
+        tasks: [],
+        select: backlog,
+      },
+      {
+        title: "In Progress",
+        tasks: [],
+        select: [],
+      },
+      {
+        title: "Finished",
+        tasks: [],
+        select: [],
+      },
+    ];
+  }, []);
 
   return (
     <>
       <Header />
       <main>
-        <Card title="Backlog" />
-        <Card title="Ready" />
-        <Card title="In Progress" />
-        <Card title="Finished" />
+        {columns.map((item) => (
+          <Column title={item.title} />
+        ))}
       </main>
       <Footer />
     </>

@@ -1,9 +1,11 @@
-import React from "react";
-import { Cards } from "../../types";
-import { AddButton } from "./AddButton";
+import { AddTask } from "./AddTask";
 import style from "./style.module.css";
 
-export const Card: React.FC<Cards> = ({ title }) => {
+type Columns = {
+  title: string;
+};
+
+const Column = ({ title }: Columns) => {
   return (
     <div className={style.card}>
       <h2 className={style.title}>{title}</h2>
@@ -11,7 +13,9 @@ export const Card: React.FC<Cards> = ({ title }) => {
         <li className={style.task}>Task 1</li>
         <li className={style.task}>Task 2</li>
       </ul>
-      <AddButton task={[]} setTask={setTask} />
+      <AddTask />
     </div>
   );
 };
+
+export default Column;

@@ -1,50 +1,17 @@
-# React + TypeScript + Vite
+Kanban Board - это веб-приложение для организации и управления задачами в формате Kanban. Пользователи могут создавать, перемещать и удалять задачи, а также просматривать подробную информацию о каждой задаче. Каждая задача может быть размещена в одной из колонок, отражающих ее текущий статус (например, "Новые", "В процессе", "Завершенные"). Пользователи могут легко отслеживать прогресс выполнения задач и организовывать свою работу с помощью этой удобной веб-приложения.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Основной функционал:
 
-Currently, two official plugins are available:
+• Добавление новых задач в различные колонки.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+• Перемещение задач между колонками с помощью select.
 
-## Expanding the ESLint configuration
+• Редактирование описания задачи.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+• Удаление задач.
 
-- Configure the top-level `parserOptions` property like this:
+• Отображение статистики о количестве выполняемых и выполненный задач.
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+• Сохранение данных о задачах в локальном хранилище браузера.
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
-
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+Проект Kanban Board предоставляет простой и эффективный способ организации работы и управления задачами, что делает его полезным инструментом для любого пользователя, который хочет структурировать свои задачи и повысить производительность.
